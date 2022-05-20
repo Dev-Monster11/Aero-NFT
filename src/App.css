@@ -1,0 +1,794 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.main_background{
+    color: #fff;
+
+}
+
+@font-face {
+    font-family: 'equinoxbold';
+    src: url('fonts/equinox_bold-webfont.woff2') format('woff2'),
+    url('fonts/equinox_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'equinoxregular';
+    src: url('fonts/equinox_regular-webfont.woff2') format('woff2'),
+    url('fonts/equinox_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.about_timer h3, .plane_desc h4, .plane_desc2 h4, .team_div h3, .team_div h5, .team_member h4, .time_line_mob_view h4{
+    font-family: 'equinoxregular';
+}
+
+
+img{
+    max-width: 100%;
+}
+
+button.navbar-toggler.collapsed {
+    background-color: #fff;
+}
+button.navbar-toggler {
+    background-color: #fff;
+}
+
+.main_background{
+    background-image: url('images/background-main.jpg');
+    background-size: cover;
+}
+
+.second_main{
+    background-image: url('images/second_main.png');
+    background-size: cover;
+    min-height: 100vh;
+    background-position: bottom;
+    overflow: hidden;
+}
+
+.main_logo_col{
+    display: flex;
+    justify-content: end;
+}
+
+.main_logo_col img{
+    margin-right: 50px;
+}
+
+.main_button_col{
+    display: flex;
+    justify-content: center;
+}
+
+.main_button_col button{
+    font-family: 'equinoxregular';
+    background: none;
+    font-weight: 600;
+    border: none;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0 24px;
+}
+
+.desc_main{
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc_main h1{
+    color: #fff;
+}
+
+.desc_main h5, .desc_main h5 span{
+    font-weight: 300;
+    color: #fff;
+}
+
+.desc_main h5 span{
+    font-weight: 900;
+}
+
+.desc_main .submit_btn{
+    font-family: 'equinoxregular';
+    background-color: #fff;
+    color: #37597E;
+    font-weight: 600;
+    padding: 4px 65px;
+    font-size: 20px;
+    border-radius: 23px;
+    border: 2px solid #fff;
+}
+
+.navbar-brand img{
+    max-width: 250px !important;
+}
+
+.navbar-collapse {
+    justify-content: end !important;
+}
+
+.navbar{
+    background: none;
+    padding: 30px 75px;
+}
+
+.nav-link{
+    font-family: 'equinoxregular';
+    color: #fff !important;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.nav-item-img{
+    background-color: #fff;
+    padding: 10px;
+    width: 33px;
+    border-radius: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    height: 33px;
+}
+
+.nav-button{
+    margin-left: 30px;
+}
+
+.nav-button, .about_btn button{
+    font-family: 'equinoxregular';
+    background: none;
+    display: flex;
+    color: #fff;
+    border: none;
+    border: 1px solid #183360;
+    padding: 4px 30px;
+    justify-content: center;
+    align-content: center;
+}
+
+.progress {
+    background: #fff;
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    height: 20px;
+    width: 260px;
+    margin: 25px 0;
+}
+
+.progress-value {
+    animation: load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: #37597E;
+    height: 20px;
+    width: 0;
+}
+
+@keyframes load {
+    0% { width: 0; }
+    100% { width: 68%; }
+}
+
+.about_section{
+    padding: 120px 0;
+}
+
+.about_section .iframe_video{
+    width: 100%;
+    height: 310px;
+}
+
+.about_section_col p{
+    color: #c2c2c2;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.about_btn{
+    display: flex;
+}
+
+.about_btn button{
+    border: 1px solid #fff;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+.count_down li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.count_down li span{
+    display: block;
+    text-align: center;
+    border: 1px solid #ffffff73;
+    padding: 7px;
+    border-radius: 6px;
+    margin-right: 7px;
+}
+.count_down li p{
+    text-align: center;
+    font-size: 8px;
+    margin-right: 6px;
+}
+
+.about_timer h3, .plane_desc h4, .team_div h3, .tokenomics h5{
+    font-family: 'equinoxregular';
+}
+
+.about_timer h3{
+    margin-top: 25px;
+    font-weight: 500;
+}
+
+.plane_img::after {
+    content: '';
+    position: absolute;
+    border-radius: 100%;
+    left: 0;
+    height: 250px;
+    width: 250px;
+    background-color: #9CA4B9;
+    z-index: 0;
+    right: 0;
+    margin: auto;
+}
+.plane_img {
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plane_img img {
+    position: relative;
+    z-index: 1;
+}
+
+.plane_dsc_row{
+    justify-content: center;
+    height: 75vh;
+}
+
+.plane_dsc_row2{
+    justify-content: center;
+    height: 75vh;
+}
+.plane_desc h4, .plane_desc2 h4{
+    position: relative;
+    font-size: 30px;
+}
+
+.plane_desc h4::after{
+    content: '';
+    position: absolute;
+    width: 350px;
+    background-color: #fff;
+    border: 1px solid #ffffffad;
+    top: 11px;
+    margin-left: 10px;
+
+}
+
+.plane_desc2 h4::after{
+    content: '';
+    position: absolute;
+    width: 175px;
+    background-color: #fff;
+    border: 1px solid #ffffffad;
+    top: 11px;
+    margin-left: 10px;
+
+}
+
+.plane_desc, .plane_desc2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.plane_desc p,  .plane_desc2 p, .team_div p{
+    font-size: 17px;
+    color: #ffffffbf;
+    margin: 0;
+}
+
+.time_line, .time_line_mob_view{
+    text-align: center;
+}
+
+.time_line img{
+    max-width: 90%;
+}
+
+.time_line_mob_view{
+    margin-top: 30px;
+}
+
+.team_div{
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+.team_div img{
+    width: 20%;
+}
+
+.team_member{
+    text-align: center;
+}
+
+.team_member img{
+    max-width: 200px;
+    max-height: 225px;
+}
+
+ .team_member span{
+    font-size: 11px;
+}
+
+.team_member p{
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.flight_col img{
+    width: 100px;
+    margin-top: 10px;
+}
+.flight_col p{
+    font-size: 10px;
+}
+.flight_col h5{
+    font-family: 'equinoxregular';
+}
+
+.tokenomics{
+    background-image: url('images/background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    margin-top: 70px;
+    background-position: center;
+    min-height: 770px;
+}
+
+
+.tokenomics .main_img{
+    position: relative;
+    width: 150px;
+    bottom: 71px;
+    right: -20px;
+}
+
+.tokenomics .token_col{
+    border-right: 1px solid #ffffff54;
+}
+
+.tokenomics_dsc{
+    margin-top: 40px;
+}
+
+.tokenomics_dsc p{
+    font-size: 14px;
+    padding: 0 65px;
+}
+
+.tokenomics_dsc .token_para {
+    font-size: 9px ;
+    padding: 0 65px;
+}
+
+.divider{
+    color: #fff;
+    border: 1px solid #ffffff12;
+    width: 80%;
+}
+
+.token_images img{
+    width: 125px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 20px;
+}
+
+.footer_links{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.footer_links h5{
+    font-family: 'equinoxregular';
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.subs_input input{
+    background: none;
+    border: 1px solid #6D85AE;
+    padding: 4px 0px 3px 0px;
+}
+
+.subs_input input::placeholder{
+    font-size: 13px;
+    padding-left: 5px;
+}
+
+.subs_input button{
+    background-color: #6D85AE;
+    color: #000;
+    border: 1px solid #6D85AE;
+    padding: 8px 25px 5px 25px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.follow_us{
+    margin-top: 30px;
+}
+
+.follow_us::before{
+    content: '';
+    position: relative;
+
+}
+
+.footer-nav-item-img{
+    background-color: #fff;
+    width: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    margin-right: 15px;
+    cursor: pointer;
+    height: 31px;
+}
+
+.termsFeed{
+    margin-top: 35px;
+    background-color: #6D85AE;
+}
+
+footer .termsFeed p {
+    margin: 0;
+    padding: 15px 0;
+    color: #000;
+}
+
+footer .termsFeed p span{
+    font-weight: 700;
+    color: #000;
+}
+
+.time_line_mob_view{
+    display: none;
+}
+
+.web_plane{
+    display: flex;
+}
+.mob_plane{
+    display: none;
+}
+
+.subscribe h5{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1200px){
+    .plane_desc h4::after, .plane_desc2 h4::after {
+        content: '';
+        display: none;
+    }
+    .main_plane_dsc{
+        padding: 60px 0;
+    }
+    .plane_desc{
+        padding-left: 16px !important;
+    }
+    .plane_dsc_row {
+        justify-content: center;
+        min-height: 0 !important;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        height: 100% !important;
+    }
+
+    .plane_dsc_row2 {
+        min-height: 0 !important;
+    }
+}
+
+@media (max-width: 1200px){
+    .tokenomics {
+        text-align: center;
+        background: none;
+        margin-top: 130px;
+    }
+    .tokenomics .token_col , .token_last{
+        font-size: 11px;
+        padding: 0 8px;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .main_background{
+     background-position: top;
+    }
+    .web_plane{
+        display: none;
+    }
+    .mob_plane{
+        display: flex;
+    }
+
+    .main_background .navbar {
+        background: none;
+         padding: 10px;
+    }
+    .navbar-brand img{
+        width: 200px;
+    }
+
+    .time_line_mob_view {
+        display: block;
+        margin-top: 70px;
+        padding: 0 10px;
+    }
+    .about_section {
+        padding: 55px 15px;
+    }
+
+    .about_section .iframe_video{
+        width: 100%;
+        height: 196px;
+    }
+
+    .plane_desc h4::after, .plane_desc2 h4::after {
+        content: '';
+        display: none;
+    }
+
+    .team_div {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 70px;
+    }
+
+    .tokenomics {
+        text-align: center;
+        background: none;
+        margin-top: 130px;
+    }
+
+    .tokenomics h5{
+        font-size: 28px;
+    }
+
+    .tokenomics .token_col {
+        font-size: 14px;
+         border-right: none;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ffffff1f;
+    }
+    .token_last{
+        font-size: 14px;
+    }
+
+    .tokenomics_dsc{
+        margin-top: 10px;
+    }
+
+    .tokenomics_dsc p {
+        font-size: 12px;
+        padding: 0;
+    }
+
+    .tokenomics_dsc .token_para {
+        font-size: 9px !important;
+        padding: 0;
+    }
+
+    .token_images img {
+        width: 125px;
+        margin-right: 15px;
+        margin-bottom: 16px;
+    }
+
+    footer .footer_logo{
+        width: 180px;
+        margin-top: 30px;
+    }
+
+    .footer_links {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    .footer_links h5{
+        font-size: 13px;
+    }
+
+    div#basic-navbar-nav {
+        margin-top: 17px;
+    }
+
+    button.nav-button {
+        margin-top: 16px;
+    }
+
+    .header_social{
+        margin-top: 13px;
+    }
+
+    .plane_dsc_row {
+        justify-content: center;
+        min-height: 90vh;
+        margin-top: 30px;
+        height: 100%;
+        margin-bottom: 25px;
+    }
+
+    .plane_dsc_row2 {
+        min-height: 90vh;
+        height: 100%;
+    }
+
+    .plane_img img{
+        height: 258px;
+        object-fit: contain;
+    }
+    .plane_desc, .plane_desc2 {
+        justify-content: flex-start;
+        margin-top: 40px !important;
+        padding: 27px !important;
+    }
+
+    .subscribe h5{
+        font-size: 15px;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    .subscribe p{
+        font-size: 14px;
+    }
+}
+
+.nft_background{
+    background-image: url('images/second_main.png');
+    background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.nft_container{
+    width: 600px;
+    max-width: 90%;
+    text-align: center;
+    height: 400px;
+    margin: calc(50vh - 350px) auto;
+}
+
+.nft_border{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.nft_main{
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 50px;
+}
+
+.nft_main h2{
+    font-family: 'equinoxregular';
+    color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.nft_main .max_text{
+    color: #9CA4B9;
+    font-size: 20px;
+}
+
+.nft_main .max_text b{
+    font-weight: 900;
+}
+
+.nft_main .btn_group button{
+    background: transparent;
+    border: none;
+}
+
+.mint_btn{
+    font-family: 'equinoxregular';
+    color: #2d4f75;
+    font-size: 1.2rem;
+    padding: 5px 3.5rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: 900;
+}
+
+.nft_footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+
+.nft_footer .termsFeed{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 3rem;
+    display: flex;
+}
+
+.nft_footer .termsFeed *{
+    color: white;
+}
+
+.nft_footer .termsFeed .icons{
+    margin: auto;
+}
+
+@media (max-width: 670px) {
+    .nft_footer .termsFeed{
+        display: block;
+    }
+
+    .nft_footer .termsFeed .icons{
+        padding-bottom: 15px;
+    }
+}
+
+.customButton{
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+}
+.customButton:hover{
+    background-color: transparent !important;
+}
+.mintCount{
+    font-family: 'equinoxregular';
+    font-weight: bold;
+    background: transparent;
+    border: solid white thin;
+    color: white;
+    width: 3rem;
+    border-radius: 0.31rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
