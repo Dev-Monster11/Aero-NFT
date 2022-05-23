@@ -15,12 +15,21 @@ let provider = null;
 let walletconnect, injected, bsc;
 
 const netlist = [
+    // {
+    //     chaind: 1,
+    //     rpcurl: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+    //     blockurl: "https://etherscan.io",
+    //     chainname: "Ethereum Mainnet",
+    //     chainnetname: "Ethereum Mainnet",
+    //     chainsymbol: "ETH",
+    //     chaindecimals: 18,
+    // },
     {
-        chaind: 1,
-        rpcurl: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
-        blockurl: "https://etherscan.io",
-        chainname: "Ethereum Mainnet",
-        chainnetname: "Ethereum Mainnet",
+        chaind: 4,
+        rpcurl: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+        blockurl: "https://rinkey.etherscan.io",
+        chainname: "Ethereum Rinkeby Testnet",
+        chainnetname: "Ethereum Rinkeby Testnet",
         chainsymbol: "ETH",
         chaindecimals: 18,
     },

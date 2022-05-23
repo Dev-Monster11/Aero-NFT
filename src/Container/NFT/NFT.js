@@ -10,17 +10,75 @@ import openSea from "../../images/discord.png";
 import inc from "../../images/Vector2.png";
 import dic from "../../images/Vector.png";
 import { useEffect, useMemo, useRef, useState } from "react";
-
+import abi from "../../helpers/contact.json";
+import { useWeb3React } from "@web3-react/core";
+import { ethers } from "ethers";
+import { ReactNotifications } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import { Store } from "react-notifications-component";
 const NFT = () => {
     const [count, setCount] = useState(1);
+    const [disabled, setDisabled] = useState(false);
     const decNum = () => {
         if (count > 1) setCount(count - 1);
     };
     const incNum = () => {
         if (count < 5) setCount(count + 1);
     };
+    const { account, library } = useWeb3React();
+    let contract, provider, signer;
+    try {
+        provider = new ethers.providers.Web3Provider(library.provider);
+        signer = provider.getSigner();
+        contract = new ethers.Contract("0x2ac0012f84824fcb8a24c2fe2989d41e149f0e37", abi, signer);
+    } catch (error) {
+        contract = null;
+    }
+    const mint = async () => {
+        if (contract) {
+            setDisabled(true);
+            let buffer = await contract._Mint(count, {
+                value: ethers.utils.parseUnits((0.08 * count).toString(), 18),
+                from: account,
+            });
+            await buffer.wait();
+            Store.addNotification({
+                title: "Mint",
+                message: "Successfully Minted",
+                type: "success",
+                insert: "top",
+                container: "top-right",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 2000,
+                    onScreen: true,
+                },
+            });
+            setDisabled(false);
+        } else {
+            Store.addNotification({
+                title: "Warning",
+                message: "Connect Wallet first!",
+                type: "warning",
+                insert: "top",
+                container: "top-right",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 2000,
+                    onScreen: true,
+                },
+            });
+        }
+    };
+
+    useEffect(() => {
+        console.log(account);
+    }, [account, library, disabled]);
     return (
         <div className={"nft_background"}>
+            <ReactNotifications />
             <Navbar style={{ maxWidth: "92%" }} className={"container"} expand="lg">
                 <Navbar.Brand className={"m-auto"} href="/">
                     <img src={Logo} alt={"main_logo"} />
@@ -53,7 +111,15 @@ const NFT = () => {
                                 <img src={inc} />
                             </button>
                         </div>
-                        <button className="mt-5 mint_btn">MINT NOW</button>
+                        <button
+                            className="mint_btn"
+                            onClick={() => {
+                                mint();
+                            }}
+                            disabled={disabled}
+                        >
+                            MINT NOW
+                        </button>
                     </div>
                 </div>
             </div>

@@ -742,6 +742,7 @@ footer .termsFeed p span{
     border: none;
     border-radius: 20px;
     font-weight: 900;
+    margin-top: 3rem;
 }
 
 .nft_footer{
@@ -771,6 +772,30 @@ footer .termsFeed p span{
 
     .nft_footer .termsFeed .icons{
         padding-bottom: 15px;
+    }
+}
+@media (max-width: 375px) {
+    .nft_main .max_text{
+        font-size: 1.1rem;
+    }
+    .mint_btn{
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 415px) {
+    h2{
+        font-size: 1.5rem;
+    }
+    .nft_main .max_text{
+        font-size: 1.2rem;
+    }
+    .nft_main{
+        padding: 30px;
+    }
+    .mint_btn{
+        padding: 5px 2rem;
+        margin-top: 2rem;
     }
 }
 
