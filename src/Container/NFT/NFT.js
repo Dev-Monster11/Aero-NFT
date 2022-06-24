@@ -54,7 +54,11 @@ const NFT = () => {
                         info.price.toString(),
                         "0x36D7815586a900Ae9161acF180A7cea8D98e1B55",
                         "7gBYd2saGkjA4hjW7lYO",
-                        info.signature
+                        info.signature,
+                        {
+                            value: info.price.toString(),
+                            from: account,
+                        }
                     );
                     await buffer.wait();
                     Store.addNotification({
