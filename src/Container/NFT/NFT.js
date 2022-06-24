@@ -75,6 +75,10 @@ const NFT = () => {
                         },
                     });
                     setDisabled(false);
+                })
+                .catch((e) => {
+                    console.log(e);
+                    setDisabled(false);
                 });
         } else {
             Store.addNotification({
