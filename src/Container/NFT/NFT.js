@@ -31,7 +31,7 @@ const NFT = () => {
     try {
         provider = new ethers.providers.Web3Provider(library.provider);
         signer = provider.getSigner();
-        contract = new ethers.Contract("0x4715748114542026be449974a7cfdfeb4d4a51a8", abi, signer);
+        contract = new ethers.Contract("0xabCf6B3c7a354054aE5F0628814EdB90C80759c4", abi, signer);
     } catch (error) {
         contract = null;
     }
