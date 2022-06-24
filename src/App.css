@@ -365,7 +365,7 @@ button.navbar-toggler {
 }
 
 .tokenomics{
-    background-image: url('images/background.png');
+    background: url('images/background.png');
     background-repeat: no-repeat;
     background-size: contain;
     text-align: center;

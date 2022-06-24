@@ -6,7 +6,7 @@ import insta from "../../images/instagram.png";
 import linkedin from "../../images/insta.png";
 import Youtube from "../../images/youtube.png";
 import Twitter from "../../images/twitter.png";
-import openSea from "../../images/discord.png";
+import openSea from "../../images/open_sea.png";
 import inc from "../../images/Vector2.png";
 import dic from "../../images/Vector.png";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -16,6 +16,7 @@ import { ethers } from "ethers";
 import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 import { Store } from "react-notifications-component";
+import axios from "axios";
 const NFT = () => {
     const [count, setCount] = useState(1);
     const [disabled, setDisabled] = useState(false);
@@ -37,25 +38,40 @@ const NFT = () => {
     const mint = async () => {
         if (contract) {
             setDisabled(true);
-            let buffer = await contract._Mint(count, {
-                value: ethers.utils.parseUnits((0.08 * count).toString(), 18),
-                from: account,
-            });
-            await buffer.wait();
-            Store.addNotification({
-                title: "Mint",
-                message: "Successfully Minted",
-                type: "success",
-                insert: "top",
-                container: "top-right",
-                animationIn: ["animate__animated", "animate__fadeIn"],
-                animationOut: ["animate__animated", "animate__fadeOut"],
-                dismiss: {
-                    duration: 2000,
-                    onScreen: true,
-                },
-            });
-            setDisabled(false);
+            axios
+                .get(
+                    "https://us-central1-nameless-api-production.cloudfunctions.net/tickets/7gBYd2saGkjA4hjW7lYO/signature?wallet=" +
+                        account +
+                        "&quantity=" +
+                        count
+                )
+                .then(async (response) => {
+                    console.log(response.data);
+                    let info = response.data;
+                    console.log(ethers.utils.formatUnits(info.price.toString(), 18).toString() * 1, "asdfasdf");
+                    let buffer = await contract.purchase(
+                        count,
+                        info.price.toString(),
+                        "0x36D7815586a900Ae9161acF180A7cea8D98e1B55",
+                        "7gBYd2saGkjA4hjW7lYO",
+                        info.signature
+                    );
+                    await buffer.wait();
+                    Store.addNotification({
+                        title: "Mint",
+                        message: "Successfully Minted",
+                        type: "success",
+                        insert: "top",
+                        container: "top-right",
+                        animationIn: ["animate__animated", "animate__fadeIn"],
+                        animationOut: ["animate__animated", "animate__fadeOut"],
+                        dismiss: {
+                            duration: 2000,
+                            onScreen: true,
+                        },
+                    });
+                    setDisabled(false);
+                });
         } else {
             Store.addNotification({
                 title: "Warning",
@@ -132,6 +148,11 @@ const NFT = () => {
                         <div style={{ flex: 1 }}></div>
                         <div className="d-flex justify-content-center icons">
                             <div className="footer-nav-item-img">
+                                <a target="_blank" href={"https://discord.gg/bKsEdQr4AS"}>
+                                    <img className={"nav-item-img"} src={openSea} alt={"social"} />
+                                </a>
+                            </div>
+                            <div className="footer-nav-item-img">
                                 <a target="_blank" href={"https://www.linkedin.com/in/josh-wade-6b59a975/"}>
                                     <img className={"nav-item-img"} src={linkedin} alt={"social"} />
                                 </a>
@@ -142,18 +163,8 @@ const NFT = () => {
                                 </a>
                             </div>
                             <div className="footer-nav-item-img">
-                                <a target="_blank" href={"https://www.instagram.com/wark.art/"}>
-                                    <img className={"nav-item-img"} src={insta} alt={"social"} />
-                                </a>
-                            </div>
-                            <div className="footer-nav-item-img">
                                 <a target="_blank" href={"https://twitter.com/AeroPupsForever"}>
                                     <img className={"nav-item-img"} src={Twitter} alt={"social"} />
-                                </a>
-                            </div>
-                            <div className="footer-nav-item-img">
-                                <a target="_blank" href={"https://discord.gg/bKsEdQr4AS"}>
-                                    <img className={"nav-item-img"} src={openSea} alt={"social"} />
                                 </a>
                             </div>
                         </div>

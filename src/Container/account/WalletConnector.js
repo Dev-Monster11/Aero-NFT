@@ -25,12 +25,12 @@ const netlist = [
     //     chaindecimals: 18,
     // },
     {
-        chaind: 4,
-        rpcurl: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+        chaind: 32057,
+        rpcurl: "http://d06d2d12-a9c3-4c65-8fd5-4bf269b74f7e.ethereum.nameless.io",
         blockurl: "https://rinkey.etherscan.io",
-        chainname: "Ethereum Rinkeby Testnet",
-        chainnetname: "Ethereum Rinkeby Testnet",
-        chainsymbol: "ETH",
+        chainname: "Aeropups’ Private Network",
+        chainnetname: "Aeropups’ Private Network",
+        chainsymbol: "AER",
         chaindecimals: 18,
     },
     // {
