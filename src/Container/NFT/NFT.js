@@ -40,7 +40,7 @@ const NFT = () => {
             setDisabled(true);
             axios
                 .get(
-                    "https://us-central1-nameless-api-production.cloudfunctions.net/tickets/7gBYd2saGkjA4hjW7lYO/signature?wallet=" +
+                    "https://us-central1-nameless-api-production.cloudfunctions.net/tickets/hK6TxqOyY2cpf97UxgFq/signature?wallet=" +
                         account +
                         "&quantity=" +
                         count
@@ -52,8 +52,8 @@ const NFT = () => {
                     let buffer = await contract.purchase(
                         count,
                         info.price.toString(),
-                        "0x36D7815586a900Ae9161acF180A7cea8D98e1B55",
-                        "7gBYd2saGkjA4hjW7lYO",
+                        "0x4bd0244069Ba54d22B93C38Cc50733997DbDeF67",
+                        "hK6TxqOyY2cpf97UxgFq",
                         info.signature,
                         {
                             value: info.price.toString(),
