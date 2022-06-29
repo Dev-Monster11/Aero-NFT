@@ -31,7 +31,7 @@ const NFT = () => {
     try {
         provider = new ethers.providers.Web3Provider(library.provider);
         signer = provider.getSigner();
-        contract = new ethers.Contract("0xabCf6B3c7a354054aE5F0628814EdB90C80759c4", abi, signer);
+        contract = new ethers.Contract("0xB2e96DF7bBc4c991bF93a5Bb87A1d66c59643e7B", abi, signer);
     } catch (error) {
         contract = null;
     }
@@ -52,7 +52,7 @@ const NFT = () => {
                     let buffer = await contract.purchase(
                         count,
                         info.price.toString(),
-                        "0xB2e96DF7bBc4c991bF93a5Bb87A1d66c59643e7B",
+                        "0x4bd0244069Ba54d22B93C38Cc50733997DbDeF67",
                         "hK6TxqOyY2cpf97UxgFq",
                         info.signature,
                         {
