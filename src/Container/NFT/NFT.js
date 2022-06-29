@@ -52,7 +52,7 @@ const NFT = () => {
                     let buffer = await contract.purchase(
                         count,
                         info.price.toString(),
-                        "0x4bd0244069Ba54d22B93C38Cc50733997DbDeF67",
+                        "0xB2e96DF7bBc4c991bF93a5Bb87A1d66c59643e7B",
                         "hK6TxqOyY2cpf97UxgFq",
                         info.signature,
                         {
