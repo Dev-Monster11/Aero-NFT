@@ -31,7 +31,7 @@ const NFT = () => {
     try {
         provider = new ethers.providers.Web3Provider(library.provider);
         signer = provider.getSigner();
-        contract = new ethers.Contract("0xB2e96DF7bBc4c991bF93a5Bb87A1d66c59643e7B", abi, signer);
+        contract = new ethers.Contract("0x4f189ce0283208146e141B79e96c23BFcbF04d35", abi, signer);
     } catch (error) {
         contract = null;
     }
@@ -40,7 +40,7 @@ const NFT = () => {
             setDisabled(true);
             axios
                 .get(
-                    "https://us-central1-nameless-api-production.cloudfunctions.net/tickets/hK6TxqOyY2cpf97UxgFq/signature?wallet=" +
+                    "https://us-central1-nameless-api-production.cloudfunctions.net/tickets/30TLlh8yP96JFOSmwqXV/signature?wallet=" +
                         account +
                         "&quantity=" +
                         count
@@ -52,8 +52,8 @@ const NFT = () => {
                     let buffer = await contract.purchase(
                         count,
                         info.price.toString(),
-                        "0x4bd0244069Ba54d22B93C38Cc50733997DbDeF67",
-                        "hK6TxqOyY2cpf97UxgFq",
+                        "0x205c5Ec6f5edcFdA9407E723A9fc2F2040d3A2FD",
+                        "30TLlh8yP96JFOSmwqXV",
                         info.signature,
                         {
                             value: info.price.toString(),
